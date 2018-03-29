@@ -26,7 +26,8 @@ A dataset of countries borders for iOS (pList format). The dataset currently con
  ## Use Case
  The dataset can be used to draw borders between countries using `MKPolyline` and `MKPolygon` from MapKit.
  
- <img src="country.png" width="500">
+ <img src="countries.png" width="500">
+ 
  ## TODOs
  - [ ] Add all European countries
  - [ ] Add all US countries
