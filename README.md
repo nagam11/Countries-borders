@@ -31,4 +31,4 @@ A dataset of countries borders for iOS (pList format). The dataset currently con
  
  ## TODOs
  - [ ] Add all European countries
- - [ x] Add all US states
+ - [x] Add all US states
