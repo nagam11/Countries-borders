@@ -1,5 +1,5 @@
-# Countries borders
-A dataset of countries borders for iOS (pList format). The dataset currently contains 11 US states and 13 European countries. Every country is identified by its country code (for example ITA for Italy, POR for Portugal).
+# iOS MapKit Overlay Coordinates
+A dataset of countries borders for iOS (pList format). The dataset currently contains 50 US states and 13 European countries. Every country is identified by its country code (for example ITA for Italy, POR for Portugal).
 
 ## How to encode for MapKit
 ```
@@ -8,6 +8,7 @@ A dataset of countries borders for iOS (pList format). The dataset currently con
         var states = [State]()
         for item in array {
             let dictionary = item as? [String : Any]
+            let code = dictionary?["code"] as? String
             let name = dictionary?["state"] as? String
             let borders = dictionary?["borders"] as! [NSArray]
             var points = [CLLocationCoordinate2D]()
@@ -17,7 +18,7 @@ A dataset of countries borders for iOS (pList format). The dataset currently con
                 let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
                 points.append(coordinate)
             }
-            let state = State(name: name, borders: points)
+            let state = State(code: code, name: name, borders: points)
             states.append(state)
         }
         return states as [State]
@@ -30,4 +31,4 @@ A dataset of countries borders for iOS (pList format). The dataset currently con
  
  ## TODOs
  - [ ] Add all European countries
- - [ ] Add all US countries
+ - [ x] Add all US states
